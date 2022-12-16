@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        var bool_values = [true, false, true, false, false, false]
+        var otherDays = [ 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+        var checkedDays = []
+
+        // Succeeded in reducing the values in the new array to have only true values
+        // Then, later also succeeded in creating a second array to have only the days from
+        // the otherDays' arrays as compared to the number of true values from the bool_values array
+        const chosenDays = bool_values.filter((trueDays, trueDaysIndex)=>{
+            if( otherDays.indexOf(otherDays.at(trueDaysIndex)) == trueDaysIndex && trueDays){
+                checkedDays[trueDaysIndex] = otherDays.at(trueDaysIndex)
+                return trueDays
+            }
+            // else{
+            //         checkedDays[trueDaysIndex] = ''
+            //         return ''
+            //     }
+            })
+            
+            console.log(checkedDays.toString())
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Event Exercise</title>
+</head>
+<body>
+    <h2>Mouse position tracker</h2>
+    <p>Track your mouse's x and y position within an element. As you move the mouse
+        within the element, the x position and y position values will update.</p>
+    <ol>
+        <li>
+            Create a page element and add sizing to it, including height and width.
+            Create a class style named active that has a background-color property of
+            red. Finally, create an output element that will contain your text.
+        </li>
+        <li>
+            Select the main container element and add event listeners to it. Listen for
+            mouseover, mouseout, and mousemove.
+        </li>
+        <li>
+            On mouseover, add the active class, and on mouseout, remove the active
+            class.
+        </li>
+        <li>
+            On mousemove, call a function that tracks the event element clientX and
+            clientY positions, embeds them in a human-readable sentence, and outputs
+            it into the output element.
+        </li>
+    </ol>
+
+    <!-- Exercise starts here -->
+    <!-- step 1 -->
+    <p class="notifyX"></p>
+    <p class="notifyY"></p>
+    <div class="output"></div>
+    <style>
+        .notifyX, .notifyY{
+            color:fuchsia;
+        }
+        .output{
+            height: 200px;
+            width: 200px;
+            margin: 10px auto;
+        }
+        .active{
+            background-color: red;
+        }
+    </style>
+    <!-- End of step 1 -->
+    <script>
+        // step 2
+        var container = document.querySelector('.output');
+        // step 3
+        container.addEventListener('mouseover', function(){
+            container.classList.add('active');
+        });
+        container.addEventListener('mouseout', function(){
+            container.classList.remove('active');
+        });
+        // End of step 3
+        
+        // step 4
+        container.addEventListener('mousemove', function(){
+            var displayX = document.querySelector('.notifyX');
+            var displayY = document.querySelector('.notifyY');
+            displayX.innerHTML = "Mouse position on the Horizontal Axis is " + event.clientX;
+            displayY.innerHTML = "Mouse position on the Vertical Axis is " + event.clientY;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin:0;
+            padding: 0;
+        }
+
+        /* Header styles */
+        header{
+            text-align: center;
+            margin:0 auto;
+            padding: 0;
+            max-width: 400px;
+        }
+        nav{
+            background: salmon;
+            padding: 10px;
+        }
+        h1{
+            font-family: 'Quicksand', sans-serif;
+        }
+        span{
+            color: rgb(18, 96, 102);
+        }
+        
+        /* Main styles */
+        main {
+            background: pink;
+            height: 300px;
+            max-width: 400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        main div.time{
+            font-size: 2em;
+            font-family: Quicksand, sans-serif;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <h1>Vanilla JavaScript <span>Clock</span></h1>
+        </nav>
+    </header>
+
+    <main>
+        <div class="time">
+        </div>
+    </main>
+    
+    <script>
+        function currentTime(){
+            let date = new Date()
+            let hh = date.getHours()
+            let mm = date.getMinutes()
+            let ss = date.getSeconds()
+            let session = 'AM'
+
+            if(hh == 0){
+                hh = 12
+            }
+            if(hh > 12){
+                hh = hh - 12
+                session = 'PM'
+            }
+
+            hh = (hh < 10) ? '0' + hh : hh
+            mm = (mm < 10) ? '0' + mm : mm
+            ss = (ss < 10) ? '0' + ss : ss
+
+            let time = hh + ':' + mm + ':' + ss + ' ' + session;
+
+            document.querySelector('.time').innerHTML = time
+            
+            let t = setTimeout(function(){
+                currentTime()
+            }, 1000)
+        }
+        currentTime()
+    </script>
+</body>
+</html>

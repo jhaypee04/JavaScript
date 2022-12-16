@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click me Game</title>
+    <style>
+        .output{
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+            margin: auto;
+            text-align: center;
+        }
+        .box{
+            width: 50px;
+            height: 50px;
+            position: relative;
+            top:50px;
+            left: 20%;
+            background-color: red;
+        }
+        .message{
+            text-align: center;
+            padding: 10px;
+            font-size: 1.3em;
+        }
+    </style>
+</head>
+<body>
+    <div class="output"></div>
+    <div class="message"></div>
+
+    <script>
+        // My Addition
+        let scoreboard = [];
+        // step 1
+        var game_area = document.querySelector('.output')
+        var message = document.querySelector('.message')
+        var created_div = document.createElement('div')
+        // step 2
+        game_area.appendChild(created_div)
+        created_div.classList.add('box')
+        // step 3
+        message.innerHTML = 'Press to Start'
+        // step 4
+        var game = {
+            start: null
+        }
+        // step 5
+        function randomNumberGenerator(max_value){
+            let random_number = Math.floor(Math.random()*max_value)
+            return random_number
+        }
+        // step 6
+        created_div.addEventListener('click', function(){
+            created_div.style.display = 'none'
+            setTimeout( addBox, randomNumberGenerator(2000) )
+            if(game.start === null){
+                message.innerHTML = 'loading'
+            // step 7
+            } else {
+                let date = new Date()
+                let unix_time = date.getTime()
+                console.log(unix_time)
+                console.log(game.start)
+                console.log( unix_time-game.start)
+                score = (unix_time - game.start) / 1000
+                scoreboard.push(score);
+                console.log(scoreboard)
+                message.innerHTML = 'Your Current Score is: ' + score
+            }
+        })
+        // step 8
+        function addBox(){
+            created_div.style.display = 'block'
+            // My Addition
+            message.innerHTML = "<span id='endGame' style='color: fuchsia;'> Click Here to End Game</span> <br>"
+            // End of My Addition
+            message.innerHTML += 'Click red box to continue play...'
+            game.start = new Date().getTime()
+            // step 9
+            let new_width = 500 - 50
+            let random_position = Math.floor(Math.random() * new_width)
+            let new_width_with_px = random_position + 'px';
+            var new_position = created_div.style.left = new_width_with_px
+            var new_position = created_div.style.top = new_width_with_px
+            // My Addition
+            var endGame = document.querySelector('#endGame')
+            endGame.addEventListener('click', function(){
+                message.innerHTML = 'scoreboard: ' + scoreboard
+                message.innerHTML += '<br>Number of times played: ' + scoreboard.length
+                console.log(scoreboard)
+                scoreboard = []
+            }) 
+        }
+    </script>
+</body>
+</html>

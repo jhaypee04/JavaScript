@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Methods</title>
+    <style>
+        li{
+            color: goldenrod;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Other Array Methods</h2>
+    <h3>String methods:</h3>
+    <ul>
+        <li>Working with index and positions</li>
+        <div id="output"></div>
+        <script>
+            var output = document.querySelector('#output')
+            // index
+            let poem = 'Roses are red, violets are blue, if i can do JS, then you can too!'
+            let index_of_red = poem.indexOf('red');
+            output.innerHTML = poem
+            output.innerHTML += '<br>The index of red is: ' + index_of_red
+
+            let position1 = poem.charAt(10)
+            output.innerHTML += '<br>The Character at 10 is ' + position1
+        </script>
+
+        <li>Creating substrings</li>
+        <div id="output1"></div>
+        <script>
+            var output1 = document.querySelector('#output1')
+            let d = "Create a substring"
+            output1.innerHTML = d
+            output1.innerHTML += '<br>Start to slice the above string from position 5: ' + d.slice(5)
+            output1.innerHTML += `<br>Start to slice above string, starting from 0th position, stopping at index 3: ${d.slice(0,3)}`
+        </script>
+
+        <li>Replacing parts of the string</li>
+        <div id="output2"></div>
+        <script>
+            let hi = "Hi bobby"
+            let new_greeting = hi.replace('bobby', 'John')
+            let output2 = document.querySelector('#output2')
+            output2.innerHTML = hi
+            output2.innerHTML += '<br>' + new_greeting + '<hr style=" border-color: fuchsia;">'
+        </script>
+
+        <li>Uppercase and lowercase</li>
+        <div id="output3"></div>
+        <script>
+            let output3 = document.querySelector('#output3')
+            let low_bye = 'bye!'
+            let up_bye = low_bye.toUpperCase()
+            output3.innerHTML = low_bye
+            output3.innerHTML += up_bye
+        </script>
+        <div>Making only the first  letter of a sentence cap</div>
+        <div id="output4"></div>
+        <script>
+            let op4 = document.querySelector('#output4')
+            let sentence = 'hi, i love only attractive ladies!'
+            let cap1Leta = sentence.charAt(0).toUpperCase().concat(sentence.slice(1))
+            console.log(cap1Leta) 
+        </script>
+
+        <li>The start and end of a string</li>
+        <div id="op5"></div>
+        <script>
+            let op5 = document.querySelector('#op5')
+            let encouragement = "You are doing great, keep up the good work!"
+            let bool_start = encouragement.startsWith('You')
+            op5.innerHTML = encouragement
+            op5.innerHTML += "<br>The above encouragement starts with 'You'? " + `<span style="color: red; font-weight: bold">${bool_start}</span>`
+        </script>
+    </ul>
+</body>
+</html>

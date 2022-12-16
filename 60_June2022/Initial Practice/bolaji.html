@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="active" id="home">X</p>
+    <p class="active" id="home2">Y</p>
+
+    <script>
+        const active = document.querySelector(".active");
+
+        const mySectionX = document.getElementById("home");
+
+        const mySectionY = document.getElementById("home2");
+
+        active.style.fontSize = "30px";
+        active.style.fontWeight = "bold";
+        active.style.fontHeight = "20px";
+        active.style.backgroundColor = "red";
+
+        console.log("is this OK");
+
+        mySectionX.addEventListener("mouseout", function toDO1() {
+            var me1 = active.remove();
+        });
+        mySectionX.addEventListener("mouseover", function toDO2() {
+            var me2 = active;
+        });
+        mySectionX.addEventListener("mousemove", function toDO3() {
+            var me3 = "This mouse have been moved";
+            console.log(me3);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>replace method</title>
+</head>
+<body>
+    <h2>Practice Exercise 8.5</h2>
+    <p>Using the replace() string method, complete this vowel replacer exercise by
+        replacing the vowels in a string with numbers. You can start with this string: </p>
+    <h3 style="background-color: black; color: white; padding-left: 10px;">I love JavaScript</h3>
+    <p>And turn it into something like the following: </p>
+    <h3 style="background-color: black; color: white; padding-left: 10px;">2 l3v1 j0v0scr2pt</h3>
+    <p>Take the following steps:</p>
+
+    <ol>
+        <li>Create the previously specified string, and convert it to lowercase.</li>
+        <li>Create an array containing the vowels: a, e, i, o, u.</li>
+        <li>Loop through each letter you have in the array, and output the current letter
+            into the console so that you can see which letter will be converted.</li>
+        <li>Within the loop, using replaceAll() update each vowel substring with the
+            index value of the letter from the vowel array.</li>
+        <li>Once the loop completes output the result of the new string into the console.</li>
+    </ol>
+
+    <div id="op"></div>
+    <script>
+        let op = document.querySelector('#op')
+        let msg = 'I love JavaScript'.toLowerCase()
+        let arr = [ 'a', 'e', 'i', 'o', 'u' ]
+        let new_msg;
+        arr.forEach((item, index)=>{
+            msg.replaceAll(item, index)
+        })
+        console.log(msg)
+    </script>
+</body>
+</html>

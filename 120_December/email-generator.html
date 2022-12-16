@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ol></ol>
+    <script>
+        var ol = document.querySelector('ol')
+        // Method 1(One user)
+        var firstname = 'Bettina'
+        var lastname = 'Ugwuanyi'
+
+        function createEmail(fname, lname){
+            var li = document.createElement('li')
+            var emailEnd = '@gmail.com'
+            // To be able to view in the browser
+            li.innerHTML += fname+lname+emailEnd
+            ol.append(li)
+            
+            // To be able to view in the console
+            console.log(fname+lname+emailEnd)
+        }
+        createEmail(firstname, lastname)
+
+        // Method 2 (Five users in an array)
+        var users = [
+            { firstname: 'Mike', lastname: 'Tyson'},
+            { firstname: 'Josh', lastname: 'Bush'},
+            { firstname: 'Barack', lastname: 'Obama'},
+            { firstname: 'Isael', lastname: 'Michell'},
+            { firstname: 'Boris', lastname: 'Johnson'}
+        ]
+        
+        // Note, i am reusing the createEmail function below
+
+        users.forEach(( user ) => {
+            
+            createEmail( user.firstname, user.lastname )
+        })
+    </script>
+</body>
+</html>

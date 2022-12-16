@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="parent-container">
+        <!-- Navs and Tabs -->
+        <nav>
+            <div class="nav-1">
+                <a href="#tab1" class="tab-toggler">Weeks</a>
+            </div>
+            <div class="nav-2">
+                <a href="#tab2" class="tab-toggler">Modules Registry</a>
+            </div>
+            <div class="nav-3">
+                <a href="#tab3" class="tab-toggler">Attendance</a>
+            </div>
+            <div class="nav-4">
+                <a href="#tab4" class="tab-toggler">Students</a>
+            </div>
+        </nav>
+
+        <!-- Weeks Tab -->
+        <div>
+            <div id="tab1" class="tabs show">
+                <header>Weeks Tab</header>
+                <main>
+                    <aside>
+                        <div class="select-header">
+                            Choose a Week
+                        </div>
+                        <div class="form-container">
+                            <form action="">
+                                <div class="module">
+                                    <form action="#">
+                                        <select class="form-select" >
+                                            <!-- The Options should be DYNAMICALLY SET from the number of weeks the instructor inserted while filling the Create new class form -->
+                                            <option selected>Choose a Week</option>
+                                            <option value="week1">Week 1</option>
+                                            <option value="week2">Week 2</option>
+                                            <option value="week3">Week 3</option>
+                                            <option value="week4">Week 4</option>
+                                            <option value="week5">Week 5</option>
+                                            <option value="week6">Week 6</option>
+                                            <option value="week7">Week 7</option>
+                                            <option value="week8">Week 8</option>
+                                            <option value="week9">Week 9</option>
+                                            <option value="week10">Week 10</option>
+                                            <option value="week11">Week 11</option>
+                                            <option value="week12">Week 12</option>
+                                        </select>
+                                    </form>
+                                </div>
+                            </form>
+                        </div>
+                    </aside>
+                    <section>Days
+                        <div class="day">
+                            <div class="day-header">
+                                Monday
+                            </div>
+                            <div class="form-container">
+                                <form action="">
+                                    <div class="module">
+                                        <input type="text" class="form-control" placeholder="Module">
+                                    </div>
+                                    <div class="submit">
+                                        <input type="submit" class="btn btn-success">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="day">
+                            <div class="day-header">
+                                Wednesday
+                            </div>
+                            <div class="form-container">
+                                <form action="">
+                                    <div class="module">
+                                        <input type="text" class="form-control" placeholder="Module">
+                                    </div>
+                                    <div class="submit">
+                                        <input type="submit" class="btn btn-success">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="day">
+                            <div class="day-header">
+                                Friday
+                            </div>
+                            <div class="form-container">
+                                <form action="">
+                                    <div class="module">
+                                        <input type="text" class="form-control" placeholder="Module">
+                                    </div>
+                                    <div class="submit">
+                                        <input type="submit" class="btn btn-success">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </section>
+                </main>
+            </div>
+        </div>
+
+        <div>
+            <div id="tab2" class="tabs hide">
+                <header>
+                    Modules Tab
+                </header>
+                <main>
+                    <div class="accordion_container">
+                        <div class="day_and_module_header">Week 1</div>
+                        <div class="accordion_hidden">
+                            <div class="day_and_module_container">
+                                <aside>Monday</aside>
+                                <section>Module</section>
+                            </div>
+                            <div class="day_and_module_container">
+                                <aside>Wednesday</aside>
+                                <section>Module</section>
+                            </div>
+                            <div class="day_and_module_container">
+                                <aside>Friday</aside>
+                                <section>Module</section>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </main>
+            </div>
+        </div>
+        <div>
+            <div id="tab3" class="tabs hide">Attendance Tab</div>
+        </div>
+
+        <div>
+            <div id="tab4" class="tabs hide">
+                <header>
+                    Students Tab
+                </header>
+                <main>
+                    <div class="accordion_container_student">
+                        <div class="student_name">Mark Nwodo Augustine</div>
+
+                        <div class="accordion_hidden_student">
+                            <div class="student_other_details">
+                                <aside>Email(P.)</aside>
+                                <section>mark@google.com</section>
+                            </div>
+                            <div class="student_other_details">
+                                <aside>Email(S.)</aside>
+                                <section>parent@google.com</section>
+                            </div>
+                            <div class="student_other_details">
+                                <aside>Phone Number(P.)</aside>
+                                <section>07081232322</section>
+                            </div>
+                            <div class="student_other_details">
+                                <aside>Phone Number(S.)</aside>
+                                <section>07081232322</section>
+                            </div>
+                            <div class="student_other_details">
+                                <aside>Gender(S.)</aside>
+                                <section>Male</section>
+                            </div>
+                            <div class="student_other_details">
+                                <aside>Date Of Birth(S.)</aside>
+                                <section>01/08/2022</section>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </main>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        nav{
+            display: flex;
+            justify-content: space-between;
+        }
+        .burgar-btn{
+            display: none;
+        }
+        ul{
+            list-style-type: none;
+            display: flex;
+        }
+        li{
+            margin-right: 10px;
+        }
+        @media screen and (max-width: 560px) {
+            .bg-nav{
+                background-color: #cacaca;
+            } 
+            .burgar-btn{
+                display: block;
+            }
+            .menu{
+                display: none;
+            }
+            .open{
+                display: block;
+                /* text-align: right; */
+            }
+            .transition{
+                transition: display 3s;
+            }
+            .right{
+                text-align: right;
+                margin-bottom: 10px;
+            }
+            .close{
+                display: none;
+            }
+            .block{
+                display: block;
+            }
+            ul{
+                list-style-type: none;
+                display: block;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Logo</div>
+        <div class="burgar-btn">Ham Burgar</div>
+        <div class="menu transition">
+            <ul>
+                <li>About</li>
+                <li>Contact</li>
+                <li>Login</li>
+            </ul>
+        </div>
+    </nav>
+    <script>
+        var burgar = document.querySelector('.burgar-btn')
+        var menu = document.querySelector('.menu')
+        var logo = document.querySelector('.logo')
+        var nav = document.querySelector('nav')
+        burgar.addEventListener('click', ()=>{
+            console.log(burgar)
+            menu.classList.toggle('open')
+            logo.classList.toggle('close')
+            nav.classList.toggle('bg-nav')
+            nav.classList.toggle('block')
+            burgar.classList.toggle('right')
+            // alert(123)
+        })
+    </script>
+</body>
+</html>

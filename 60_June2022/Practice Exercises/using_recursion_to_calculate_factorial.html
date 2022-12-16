@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>factorial_with_recursion!</title>
+</head>
+<body>
+    <h2>Using Recursion to calculate Factorial</h2>
+    
+    <div><h5 style="margin-bottom: 0">Insert a Number to calculate its Factorial Value!</h5></div>
+    <input type="text"  >
+    <div id="op"></div>
+
+    <p>
+        A common problem that we can solve with recursion is calculating the factorial.
+    </p>
+    <blockquote>
+        Quick mathematics refresher about factorials:
+        The factorial of a number is the product of all positive integers
+        bigger than 0, up to the number itself. So for example, the factorial
+        of seven is 7 * 6 * 5 * 4 * 3 * 2 * 1. You can write this as 7!.
+    </blockquote>
+    <p>
+        How are recursive functions going to help us calculate the factorial? We are going to
+        call the function with a lower number until we reach 0. In this exercise, we will use
+        recursion to calculate the factorial result of a numeric value set as the argument of a
+        function.
+    </p>
+    <ol>
+        <li>
+            Create a function that contains a condition within it checking if the argument value is 0.
+        </li>
+        <li>
+            If the parameter is equal to 0, it should return the value of 1. Otherwise, it
+            should return the value of the argument multiplied by the value returned
+            from the function itself, subtracting one from the value of the argument
+            that is provided. This will result in running the block of code until the value
+            reaches 0.
+        </li>
+        <li>
+            Invoke the function, providing an argument of whatever number you want
+            to find the factorial of. The code should run whatever number is passed
+            initially into the function, decreasing all the way to 0 and outputting the
+            results of the calculation to the console. It could also contain a console.log()
+            call to print the current value of the argument in the function as it gets
+            invoked.
+        </li>
+        <li>
+            Change and update the number to see how it affects the results.
+        </li>
+    </ol>
+
+    <script>
+        function checkValue( num ){
+            if( num === 0 ) {
+                return 1;
+            } else{
+                return num * checkValue( num - 1 )
+            }
+        }
+        let input_value = document.querySelector('input')
+        input_value.addEventListener('input', function(){
+            let number = input_value.value
+            let factorial = checkValue( number )
+            console.log(factorial)
+            // Additional Codes
+            let op = document.querySelector('#op')
+            op.setAttribute('style', 'color: fuchsia')
+            op.innerHTML = 'Calculate the Factorial of ' + number
+            op.innerHTML += '<br>The Factorial of ' + number + ' is ' + factorial 
+        })
+    </script>
+</body>
+</html>
